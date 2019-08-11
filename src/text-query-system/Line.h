@@ -3,6 +3,8 @@
 
 #include "Word.h"
 #include <string>
+#include <sstream>
+#include <vector>
 using namespace std;
 
 class Line
@@ -15,8 +17,8 @@ public:
 	// returns true if the search word is found in the line; false otherwise
 	bool contains(const Word& search_word) const;
 
-private:		
-
+private:
+	vector<Word> wordsInLine_;
 };
 
 #endif
