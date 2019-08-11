@@ -2,6 +2,7 @@
 #define WORD_H
 
 #include <string>
+#include <cctype>
 using namespace std;
 
 // empty classes to represent different exceptions
@@ -24,7 +25,14 @@ public:
 	bool isQueryable() const;
 
 private:	
-	string word_;	
+	static const auto MIN_SIZE_FOR_QUERY = 3u;
+	string word_;
+	void removeNewLine(); // remove newline character if file is read in
+	void convertAlltoLowerCase(); // converts all letters in word_ to lower case
+	void stripNumbers(); // removes numbers from the word
+	void stripPunctuation(); // removes all punctuation from word_
+	bool isPurePunctuation() const; // checks if word_ only contains punctuation
+	bool containsSpace() const; // checks if word_ contains a space
 };
 
 #endif
