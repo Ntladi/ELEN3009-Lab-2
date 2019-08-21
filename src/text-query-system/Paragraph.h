@@ -21,6 +21,8 @@ public:
 
 private:	
 
+	vector<Line> linesInParagraph_;     //this vector contains lines
+
 };
 
 #endif
